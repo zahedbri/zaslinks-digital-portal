@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zaslinks-Digital – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="theme-dark">
+  <header class="site-head">
+    <div class="container nav">
+      <h1 class="logo-neon"><a href="index.html">Zaslinks-Digital</a></h1>
+      <nav class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="btn teal" href="portal.html">Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <h1>Student jobs, placements & apprenticeships across the UK & Europe</h1>
+      <p>Search top job boards, save roles, and get advice with our built‑in assistant.</p>
+    </section>
+  </main>
+
+  <section class="section-light" id="about">
+    <div class="section-inner">
+      <div class="container">
+        <p class="kicker">About</p>
+        <h2>What is Zaslinks‑Digital?</h2>
+        <div class="grid grid-2">
+          <div class="panel">
+            <p>We build student‑first job portals. This demo aggregates popular UK & EU job boards, includes an AI helper, and saves your favourite roles locally.</p>
+            <ul>
+              <li>Placements, apprenticeships, part‑time, graduate</li>
+              <li>Works on Netlify (static front‑end)</li>
+              <li>Ready for ATS/API integrations (e.g., JazzHR)</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <strong>JazzHR Provider</strong>
+            <p>See our provider profile:</p>
+            <a class="btn teal" target="_blank" href="https://marketplace.jazzhr.com/providers/zaslinks-digital/">Open JazzHR profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light" id="contact">
+    <div class="section-inner">
+      <div class="container">
+        <p class="kicker">Contact</p>
+        <div class="grid grid-2">
+          <div class="panel">
+            <h3>Get in touch</h3>
+            <p>Email: <a href="mailto:info@zaslinksdigital.com">info@zaslinksdigital.com</a></p>
+            <p>Location: London, United Kingdom</p>
+          </div>
+          <div class="panel">
+            <h3>Quick links</h3>
+            <ul>
+              <li><a target="_blank" href="https://www.gov.uk/apply-apprenticeship">GOV.UK Apprenticeships</a></li>
+              <li><a target="_blank" href="https://ec.europa.eu/eures/public/en/homepage">EURES (EU jobs)</a></li>
+              <li><a target="_blank" href="https://www.prospects.ac.uk/">Prospects</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <small>© <span id="year"></span> Zaslinks‑Digital · Demo portal</small>
+  </footer>
+
+  <!-- Global Chatbot Widget -->
+  <div class="chatbot" id="chatbot" aria-live="polite">
+    <div class="chat-head">AI Career Chatbot <button id="minChat" class="icon-btn" aria-label="Minimize">−</button></div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-input"><input id="chat-input" placeholder="Ask me about jobs..." /><button id="send-btn">Send</button></div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.App && App.initHome && App.initHome();
+  </script>
+</body>
+</html>

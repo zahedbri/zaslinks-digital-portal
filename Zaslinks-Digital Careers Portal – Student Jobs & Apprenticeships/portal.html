@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zaslinks-Digital – Student Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="theme-light">
+  <header class="site-head">
+    <div class="container nav">
+      <h1 class="logo-neon"><a href="index.html">Zaslinks-Digital</a></h1>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="btn teal" href="portal.html">Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section-light" id="portal">
+    <div class="section-inner">
+      <div class="container">
+        <p class="kicker">Student Portal</p>
+        <div class="grid grid-2">
+          <div class="panel">
+            <h3 style="margin-top:0">Interactive Job Aggregator</h3>
+            <form id="searchForm" class="grid grid-auto">
+              <input class="input" id="q" placeholder="Role or skill (e.g., Marketing Intern)" />
+              <input class="input" id="loc" placeholder="City or region (e.g., London, Berlin)" />
+              <select id="type" class="input">
+                <option value="any">Any type</option>
+                <option value="internship">Internship / Placement</option>
+                <option value="apprenticeship">Apprenticeship</option>
+                <option value="parttime">Part‑time</option>
+                <option value="graduate">Graduate / Entry</option>
+              </select>
+              <select id="country" class="input">
+                <option value="uk">United Kingdom</option>
+                <option value="eu">Europe (EU/EEA)</option>
+                <option value="any">Any</option>
+              </select>
+              <button class="btn teal" type="submit">Search</button>
+            </form>
+            <div style="margin:10px 0 6px"><span class="tag" id="welcomeTag">Not signed in</span></div>
+            <div id="providerLinks" class="grid grid-3"></div>
+          </div>
+
+          <div class="panel">
+            <h3 style="margin-top:0">Saved Jobs</h3>
+            <div class="grid grid-auto">
+              <input class="input" id="saveTitle" placeholder="Job title (e.g., ‘Marketing Intern – London’)" />
+              <input class="input" id="saveUrl" placeholder="Paste job URL" />
+              <button class="btn" id="saveBtn" type="button">Add</button>
+            </div>
+            <div id="savedList" class="saved"></div>
+            <hr class="divider" />
+            <div class="grid grid-2">
+              <button class="btn teal" id="loginBtn" type="button">Login</button>
+              <button class="btn ghost" id="registerBtn" type="button">Register</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <h3 style="margin-top:0">Top Student Job Boards</h3>
+          <div class="grid grid-3">
+            <a class="card" target="_blank" id="top-indeed"><strong>Indeed</strong><div class="tag">UK & EU</div></a>
+            <a class="card" target="_blank" id="top-linkedin"><strong>LinkedIn Jobs</strong><div class="tag">Global</div></a>
+            <a class="card" target="_blank" href="https://www.studentjob.co.uk/part-time-jobs"><strong>StudentJob UK</strong><div class="tag">Students</div></a>
+            <a class="card" target="_blank" id="top-gov"><strong>GOV.UK Apprenticeships</strong><div class="tag">UK</div></a>
+            <a class="card" target="_blank" id="top-reed"><strong>Reed</strong><div class="tag">UK</div></a>
+            <a class="card" target="_blank" href="https://www.ratemyplacement.co.uk/search"><strong>RateMyPlacement</strong><div class="tag">Placements</div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <small>© <span id="year"></span> Zaslinks‑Digital · Student Portal</small>
+  </footer>
+
+  <!-- AUTH DIALOG -->
+  <dialog class="auth" id="authDlg">
+    <div class="auth-head">
+      <strong id="authTitle">Create your account</strong>
+      <button class="btn ghost" id="closeAuth" type="button">Close</button>
+    </div>
+    <div class="auth-body">
+      <div class="split">
+        <form id="registerForm" autocomplete="off">
+          <h3>Register</h3>
+          <input class="input" name="name" placeholder="Full name" required />
+          <input class="input" name="email" type="email" placeholder="Email" required />
+          <input class="input" name="password" type="password" placeholder="Password (min 6 chars)" minlength="6" required />
+          <button class="btn teal" type="submit">Create account</button>
+        </form>
+        <form id="loginForm" autocomplete="off">
+          <h3>Login</h3>
+          <input class="input" name="email" type="email" placeholder="Email" required />
+          <input class="input" name="password" type="password" placeholder="Password" required />
+          <div class="grid grid-2">
+            <button class="btn ghost" type="submit">Login</button>
+            <button class="btn" id="logoutBtn" type="button">Logout</button>
+          </div>
+          <p id="authMsg" class="error"></p>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Global Chatbot Widget -->
+  <div class="chatbot" id="chatbot" aria-live="polite">
+    <div class="chat-head">AI Career Chatbot <button id="minChat" class="icon-btn" aria-label="Minimize">−</button></div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-input"><input id="chat-input" placeholder="Ask me about jobs..." /><button id="send-btn">Send</button></div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.App && App.initPortal && App.initPortal();
+  </script>
+</body>
+</html>
